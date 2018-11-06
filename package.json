@@ -1,7 +1,8 @@
 {
   "scripts": {
-    "pretest": "rm -rf results && mkdir -p results",
-    "test": "node ./index.js"
+    "pretest": "rm -rf artifacts && mkdir -p artifacts",
+    "test": "node ./index.js",
+    "posttest": "ls -lhta artifacts"
   },
   "dependencies": {
     "puppeteer": "^1.10.0"

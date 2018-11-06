@@ -30,4 +30,7 @@ steps:
     command: custom
     customCommand: 'test'
 
-- task: DownloadBuildArtifacts@0
+- task: PublishBuildArtifacts@1
+  inputs:
+    pathtoPublish: '$(Build.ArtifactStagingDirectory)/artifacts'
+    artifactName: 'drop'
