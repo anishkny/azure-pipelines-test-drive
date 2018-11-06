@@ -30,7 +30,11 @@ steps:
     command: custom
     customCommand: 'test'
 
-- task: PublishBuildArtifacts@1
+- task: CopyFiles@2
   inputs:
-    pathtoPublish: '$(Build.ArtifactStagingDirectory)/artifacts'
-    artifactName: 'drop'
+    SourceFolder: '$(System.DefaultWorkingDirectory)'
+    Contents: |
+      artifacts/*.*
+    TargetFolder: '$(Build.ArtifactStagingDirectory)'
+
+- task: PublishBuildArtifacts@1
