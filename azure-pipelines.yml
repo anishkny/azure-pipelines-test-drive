@@ -29,3 +29,5 @@ steps:
   inputs:
     command: custom
     customCommand: 'test'
+
+- task: DownloadBuildArtifacts@0
