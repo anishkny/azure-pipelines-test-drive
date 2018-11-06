@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "pretest": "rm -rf results && mkdir -p results",
+    "test": "node ./index.js"
+  },
+  "dependencies": {
+    "puppeteer": "^1.10.0"
+  }
+}
