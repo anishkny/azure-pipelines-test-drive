@@ -3,7 +3,7 @@ resources:
 queue:
   name: Hosted Ubuntu 1604
 steps:
-- task: AnishKarandikar.anish-custom-pipelines-task.custom-build-release-task.Anish Custom Pipelines Task@0.1.4
+- task: AnishKarandikar.anish-custom-pipelines-task.custom-build-release-task.Anish Custom Pipelines Task@0
   displayName: 'Echo 3693d004fe8f'
   inputs:
     samplestring: 3693d004fe8f
