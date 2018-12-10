@@ -1,40 +1,13 @@
-# Starter pipeline
-# Start with a minimal pipeline that you can customize to build and deploy your code.
-# Add steps that build, run tests, deploy, and more:
-# https://aka.ms/yaml
-
-pool:
-  vmImage: 'Ubuntu 16.04'
-
+resources:
+- repo: self
+queue:
+  name: Hosted Ubuntu 1604
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
-
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
-
-- task: NodeTool@0
+- task: AnishKarandikar.anish-custom-pipelines-task.custom-build-release-task.Anish Custom Pipelines Task@0
+  displayName: 'Echo 3693d004fe8f'
   inputs:
-    versionSpec: '10.x'
+    samplestring: 3693d004fe8f
 
-- task: Npm@1
-  displayName: 'npm install'
-  inputs:
-    command: install
 
-- task: Npm@1
-  displayName: 'npm test'
-  inputs:
-    command: custom
-    customCommand: 'test'
 
-- task: CopyFiles@2
-  inputs:
-    SourceFolder: '$(System.DefaultWorkingDirectory)'
-    Contents: |
-      artifacts/*.*
-    TargetFolder: '$(Build.ArtifactStagingDirectory)'
 
-- task: PublishBuildArtifacts@1
